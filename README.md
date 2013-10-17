@@ -1,10 +1,5 @@
 login
 ================
 
-Login automatically
-
-Freelancer.com:
-	Login to http://www.freelancer.com/ using multiple accounts. Use added drop down to switch user accounts, and after a logout, click Login button to automatically log back in
-
-Outlook.com:
-	
+Login automatically: one separate script each for Freelancer.com, Outlook.com
+	A html select lets user choose from user accounts and sign in using that account. Once a user signs out, he/she can click Sign In button to sign in using last choosen account
