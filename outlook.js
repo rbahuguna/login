@@ -37,10 +37,11 @@ function init() {
 			fillAuthentication(jQuery(userSelector));
 		});
 
-		var selectElement = 'select';
+		var userSelect = 'select';
 
-		jQuery(userParentSelector).append('<' + selectElement + '/>');
-		jQuery(selectElement + ':last').attr('id', userSelectionId);
+		jQuery(userParentSelector).append('<' + userSelect + '/>');
+		jQuery(userSelect + ':last').attr('id', userSelectionId);
+		jQuery(userSelector).attr('accesskey', 'a');
 		for(var userIndex = 0;userIndex < users.length;userIndex++) {
 			jQuery(userSelector).append('<option ' + '' +'>' + users[userIndex].user + '</option>');
 			if (users[userIndex].user == readCookie(userSelectedCookie)) {

@@ -34,6 +34,7 @@ setTimeout(function() {
 
 	jQuery(userParentSelector).append('<' + selectElement + '/>');
 	jQuery(selectElement + ':last').attr('id', userSelectionId);
+	jQuery(userSelector).attr('accesskey', 'a');
 	for(var login in logins) {
 		jQuery(userSelector).append('<option ' + '' +'>' + logins[login].user + '</option>');
 		if (logins[login].user == jQuery.cookie(userSelectedCookie)) {
@@ -48,6 +49,7 @@ setTimeout(function() {
 
 	jQuery(userParentSelector).append('<' + selectElement + '/>');
 	jQuery(selectElement + ':last').attr('id', profileSelectionId);
+	jQuery(profileSelector).attr('accesskey', 'p');
 	for(var profile in profiles) {
 		jQuery(profileSelector).append('<option ' + '' +'>' + profiles[profile].display + '</option>');
 		jQuery(profileSelector + ' option:last').attr('value', profiles[profile].value);
