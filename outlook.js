@@ -6,6 +6,7 @@
 // @match		https://login.live.com/login.srf?*
 // @match		https://bay172.mail.live.com/default.aspx?*
 // @match		https://blu175.mail.live.com/default.aspx?*
+// @match		https://signout.live.com/content/dam/imp/surfaces/mail_signout/*
 // @require		http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js
 // @copyright	2012+, You
 // ==/UserScript==
@@ -23,6 +24,10 @@ passwordSelector = '#i0118';
 signInSelector = '#idSIButton9';
 
 function init() {
+	var signInAnchorSelector = '#brand a';
+	if (jQuery(signInAnchorSelector).length) {
+		jQuery(signInAnchorSelector)[0].click();
+	}
 	var userParentSelector = 'body';
 	var userSelectionId = "user";
 	var userSelector = '#' + userSelectionId;
