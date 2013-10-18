@@ -9,7 +9,7 @@ function createCookie(name,value,days) {
 	document.cookie = name+"="+value+expires+"; path=/;" + "domain="+/\.?[^.]+\.[^.]+$/.exec(location.hostname);
 }
 
-function eraseCookie(name) {
+function removeCookie(name) {
 	createCookie(name,"",-1);
 }
 
