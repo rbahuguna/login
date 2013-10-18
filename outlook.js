@@ -7,6 +7,7 @@
 // @match		https://*.mail.live.com/default.aspx?*
 // @match		https://signout.live.com/content/dam/imp/surfaces/mail_signout/*
 // @require		http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js
+// @require		https://rawgithub.com/rbahuguna/login/master/utility.js
 // @copyright	2012+, You
 // ==/UserScript==
 
@@ -51,7 +52,7 @@ function init() {
 	jQuery(userSelector).change(switchUser);
 
 	if (jQuery(signInSelector).length>0 && readCookie(autoLoginCookie) != null) {
-		eraseCookie(autoLoginCookie);
+		removeCookie(autoLoginCookie);
 		login(jQuery(userSelector));
 	}
 }
@@ -101,30 +102,5 @@ users =
 		password: 'Password123'
 	},
 ];
-
-function createCookie(name,value,days) {
-	if (days) {
-		var date = new Date();
-		date.setTime(date.getTime()+(days*24*60*60*1000));
-		var expires = "; expires="+date.toGMTString();
-	}
-	else var expires = "";
-	document.cookie = name+"="+value+expires+"; path=/;" + "domain="+/\.?[^.]+\.[^.]+$/.exec(location.hostname);
-}
-
-function eraseCookie(name) {
-	createCookie(name,"",-1);
-}
-
-function readCookie(name) {
-	var nameEQ = name + "=";
-	var ca = document.cookie.split(';');
-	for(var i=0;i < ca.length;i++) {
-		var c = ca[i];
-		while (c.charAt(0)==' ') c = c.substring(1,c.length);
-		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-	}
-	return null;
-}
 
 init();
