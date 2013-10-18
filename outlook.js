@@ -50,7 +50,7 @@ function init() {
 			jQuery(userSelector + ' option:last').attr('value', users[userIndex].user);
 		}
 
-		jQuery(userSelector).css("position", "fixed").css("top", 50).css("left", 150).css('z-index', 10);
+		jQuery(userSelector).css("position", "fixed").css("top", 50).css("left", 350).css('z-index', 10);
 		
 		jQuery(userSelector).change(switchUser);
 
