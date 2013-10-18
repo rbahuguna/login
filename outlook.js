@@ -4,14 +4,11 @@
 // @version		0.1
 // @description	login http://www.outlook.com/
 // @match		https://login.live.com/login.srf?*
-// @match		https://bay172.mail.live.com/default.aspx?*
-// @match		https://blu175.mail.live.com/default.aspx?*
+// @match		https://*.mail.live.com/default.aspx?*
 // @match		https://signout.live.com/content/dam/imp/surfaces/mail_signout/*
 // @require		http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js
 // @copyright	2012+, You
 // ==/UserScript==
-
-init();
 
 userLinkSelector = '#c_melink';
 logoutSelector = '#c_signout';
@@ -32,38 +29,31 @@ function init() {
 	var userSelectionId = "user";
 	var userSelector = '#' + userSelectionId;
 
-	setTimeout(function() {
-		jQuery(signInSelector).click(function(){
-			fillAuthentication(jQuery(userSelector));
-		});
+	jQuery(signInSelector).click(function(){
+		fillAuthentication(jQuery(userSelector));
+	});
 
-		var userSelect = 'select';
+	var userSelect = 'select';
 
-		jQuery(userParentSelector).append('<' + userSelect + '/>');
-		jQuery(userSelect + ':last').attr('id', userSelectionId);
-		jQuery(userSelector).attr('accesskey', 'a');
-		for(var userIndex = 0;userIndex < users.length;userIndex++) {
-			jQuery(userSelector).append('<option ' + '' +'>' + users[userIndex].user + '</option>');
-			if (users[userIndex].user == readCookie(userSelectedCookie)) {
-				jQuery(userSelector + ' option:last').attr('selected', true);
-			}
-			jQuery(userSelector + ' option:last').attr('value', users[userIndex].user);
+	jQuery(userParentSelector).append('<' + userSelect + '/>');
+	jQuery(userSelect + ':last').attr('id', userSelectionId);
+	jQuery(userSelector).attr('accesskey', 'a');
+	for(var userIndex = 0;userIndex < users.length;userIndex++) {
+		jQuery(userSelector).append('<option ' + '' +'>' + users[userIndex].user + '</option>');
+		if (users[userIndex].user == readCookie(userSelectedCookie)) {
+			jQuery(userSelector + ' option:last').attr('selected', true);
 		}
+		jQuery(userSelector + ' option:last').attr('value', users[userIndex].user);
+	}
 
-		jQuery(userSelector).css("position", "fixed").css("top", 50).css("left", 350).css('z-index', 10);
-		
-		jQuery(userSelector).change(switchUser);
+	jQuery(userSelector).css("position", "fixed").css("top", 50).css("left", 350).css('z-index', 10);
+	
+	jQuery(userSelector).change(switchUser);
 
-		if (jQuery(signInSelector).length>0 && readCookie(autoLoginCookie) != null) {
-			eraseCookie(autoLoginCookie);
-			login(jQuery(userSelector));
-		}
-
-	}, 3000);
-}
-
-function eraseCookie(name) {
-	createCookie(name,"",-1);
+	if (jQuery(signInSelector).length>0 && readCookie(autoLoginCookie) != null) {
+		eraseCookie(autoLoginCookie);
+		login(jQuery(userSelector));
+	}
 }
 
 function fillAuthentication(userSelect) {
@@ -122,6 +112,10 @@ function createCookie(name,value,days) {
 	document.cookie = name+"="+value+expires+"; path=/;" + "domain="+/\.?[^.]+\.[^.]+$/.exec(location.hostname);
 }
 
+function eraseCookie(name) {
+	createCookie(name,"",-1);
+}
+
 function readCookie(name) {
 	var nameEQ = name + "=";
 	var ca = document.cookie.split(';');
@@ -132,3 +126,5 @@ function readCookie(name) {
 	}
 	return null;
 }
+
+init();
