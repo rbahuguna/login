@@ -24,6 +24,7 @@ signInSelector = '#submit';
 proposal = '#coverLetter';
 bid = '#submitButton';
 captchaResponseSelector = '*[name=captcha_response_field]'
+agreementSelector = '#agreement';
 
 function init() {
 	jQuery(loginSelector).click(function() {
@@ -84,6 +85,7 @@ function init() {
 
 	jQuery(bid).click( function() {
 		jQuery(proposal).val(jQuery(profileSelector).val());
+		jQuery(agreementSelector).attr('checked', true);
 	});
 }
 
