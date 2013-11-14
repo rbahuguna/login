@@ -3,11 +3,8 @@
 // @namespace	http://use.i.E.your.homepage/
 // @version		0.1
 // @description	login http://www.freelancer.com/
-// @match		https://www.freelancer.com/
-// @match		http://www.freelancer.com/
-// @match		https://www.freelancer.com/dashboard/
-// @match		http://www.freelancer.com/dashboard/
-// @match		https://www.freelancer.com/projects/*
+// @match		https://www.freelancer.com/*
+// @match		http://www.freelancer.com/*
 // @require		https://cdn.jsdelivr.net/jquery.cookie/1.3.1/jquery.cookie.js
 // @copyright	2012+, You
 // ==/UserScript==
@@ -24,6 +21,7 @@ var autoLoginCookie = 'autoLogin';
 
 var proposal = '*[name=descr]';
 var bid = '#place-bid';
+submitProposal = 'button:contains("Submit Proposal")';
 
 setTimeout(function() {
 	jQuery('.login-btn').click(function(){
@@ -63,6 +61,10 @@ setTimeout(function() {
 		jQuery.removeCookie(autoLoginCookie);
 		loginUser(jQuery(userSelector));
 	}
+
+	jQuery(submitProposal).click( function() {
+		jQuery(proposal).val(jQuery(profileSelector).val());
+	});
 
 	jQuery(bid).click( function() {
 		jQuery(proposal).val(jQuery(profileSelector).val());
@@ -107,12 +109,24 @@ function switchUser() {
 logins = 
 [
 	{
-		user: "username1@google.com",
-		password: 'Password123'
+		user: "rbahuguna",
+		password: 'password'
 	},
 	{
-		user: "username2@google.com",
-		password: 'Password123'
+		user: "rbahugunadev",
+		password: 'password'
+	},
+	{
+		user: "rajeevbqa",
+		password: 'password'
+	},
+	{
+		user: "rbahugunajs",
+		password: 'password'
+	},
+	{
+		user: "rajeevdeveloper",
+		password: 'password'
 	},
 ];
 

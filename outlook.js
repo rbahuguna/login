@@ -94,12 +94,24 @@ function switchUser() {
 users =
 [
 	{
-		user: "username1@google.com",
-		password: 'Password123'
+		user: "r _ bahuguna hot",
+		password: 'password'
 	},
 	{
-		user: "username2@google.com",
-		password: 'Password123'
+		user: "rajeev . bahuguna out",
+		password: 'password'
+	},
+	{
+		user: "rajeev . bahuguna . dev out",
+		password: 'password'
+	},
+	{
+		user: "rajeev . bahuguna . java out",
+		password: 'password'
+	},
+	{
+		user: "rajeev . bahuguna . developer out",
+		password: 'password'
 	},
 ];
 
