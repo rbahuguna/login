@@ -6,6 +6,8 @@
 // @match		https://login.live.com/login.srf?*
 // @match		https://*.mail.live.com/default.aspx?*
 // @match		https://signout.live.com/content/dam/imp/surfaces/mail_signout/*
+// @match		http://in.msn.com/?ocid=mailsignout*
+// @match		http://in.msn.com/*
 // @require		http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js
 // @require		https://rawgithub.com/rbahuguna/login/master/utility.js
 // @copyright	2012+, You
@@ -22,6 +24,9 @@ passwordSelector = '#i0118';
 signInSelector = '#idSIButton9';
 
 function init() {
+	if (jQuery("a[href*=outlook]:contains('Sign In')").length>0) {
+		jQuery("a[href*=outlook]:contains('Sign In')")[0].click();
+	}
 	var signInAnchorSelector = '#brand a';
 	if (jQuery(signInAnchorSelector).length) {
 		jQuery(signInAnchorSelector)[0].click();
