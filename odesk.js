@@ -81,12 +81,20 @@ function init() {
 
 	jQuery(profileSelector).css("position", "fixed").css("top", 150).css("left", 0);
 
-	jQuery(profileSelector).change(switchProfile);
+	jQuery(profileSelector).change(fillForm);
 
 	jQuery(bid).click( function() {
-		jQuery(proposal).val(jQuery(profileSelector).val());
-		jQuery(agreementSelector).attr('checked', true);
+		fillForm();
 	});
+
+	fillForm();
+}
+
+function fillForm() {
+    if (jQuery(proposal).val().length == 0 ) {
+		jQuery(proposal).val(jQuery(proposal).val() + " " + jQuery(profileSelector).val());
+    }
+	jQuery(agreementSelector).attr('checked', true);
 }
 
 function loginUser() {
