@@ -91,9 +91,7 @@ function init() {
 }
 
 function fillForm() {
-    if (jQuery(proposal).val().length == 0 ) {
-		jQuery(proposal).val(jQuery(proposal).val() + " " + jQuery(profileSelector).val());
-    }
+	jQuery(proposal).val(jQuery(profileSelector).val());
 	jQuery(agreementSelector).attr('checked', true);
 }
 
@@ -155,6 +153,10 @@ logins =
 		user: "rajeev-bahuguna",
 		password: 'password'
 	},
+	{
+		user: "rbahuguna-php",
+		password: 'password'
+	},
 ];
 
 profiles =
@@ -170,6 +172,13 @@ profiles =
 		display: 'General',
 		value: 'I have long experience in web application development. ' +
 		'I am experienced in latest technologies including PHP, Java, .NET, web services, ajax, jquery, CSS3, HTML5. ' +
+		'I have experience using several application servers - both open source and commercial grade. ' +
+		'I also have experience using Oracle 11, SQLServer 12, MySQL databases. Please consider me for this assignment'
+	},
+	{
+		display: 'php',
+		value: 'I have long experience in web application development. ' +
+		'I am experienced in latest technologies including PHP, WordPress, Joomal, web services, ajax, jquery, CSS3, HTML5. ' +
 		'I have experience using several application servers - both open source and commercial grade. ' +
 		'I also have experience using Oracle 11, SQLServer 12, MySQL databases. Please consider me for this assignment'
 	}
