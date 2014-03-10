@@ -5,6 +5,7 @@
 // @description	login http://www.outlook.com/
 // @match		https://login.live.com/login.srf?*
 // @match		https://*.mail.live.com/default.aspx?*
+// @match		https://*.mail.live.com/mail/InboxLight.aspx?*
 // @match		https://signout.live.com/content/dam/imp/surfaces/mail_signout/*
 // @match		http://in.msn.com/?ocid=mailsignout*
 // @match		http://in.msn.com/*
@@ -116,6 +117,10 @@ users =
 	},
 	{
 		user: "rajeev . bahuguna . developer out",
+		password: 'password'
+	},
+	{
+		user: "rajeev . bahuguna . seema out",
 		password: 'password'
 	},
 ];
