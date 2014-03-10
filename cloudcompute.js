@@ -20,5 +20,5 @@ if (frm) {
 }
 else{
 	passwd=document.getElementById('password');
-	passwd.value="Ra980101"
+	passwd.value="password"
 }
