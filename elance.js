@@ -8,10 +8,10 @@
 // @copyright	2014+, You
 // ==/UserScript==
 
-var usersElementId 			= 'users';
+var usersElementId			= 'users';
 var loginNameId				= 'login_name';
 var loginPasswdId		 	= 'passwd';
-var signInId	 			= 'spr-sign-in-btn-standard';
+var signInId				= 'spr-sign-in-btn-standard';
 var userCurrentCookie		= 'user';
 var signOutSelector			= 'A:contains(Sign Out)';
 
