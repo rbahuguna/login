@@ -9,6 +9,8 @@
 // ==/UserScript==
 
 var usersElementId			= 'users';
+var proposalsElementId		= 'proposals';
+var proposalDescId			= 'bid_desc-plaintext';
 var loginNameId				= 'login_name';
 var loginPasswdId		 	= 'passwd';
 var signInId				= 'spr-sign-in-btn-standard';
@@ -16,8 +18,9 @@ var userCurrentCookie		= 'user';
 var signOutSelector			= 'A:contains(Sign Out)';
 
 function init() {
-	var usersX = 10;
-	var usersY = 450;
+	var usersX 		= 10;
+	var usersY 		= 450;
+	var proposalsY 	= 700;
 
 	var continueId		 		= 'ContinueLogin';
 	var challengeAnswerId		= 'challengeAnswerId';
@@ -61,6 +64,39 @@ function init() {
 		});
 		$$('#' + continueId)[0].click();
 	}
+
+	var proposalsElement = new Element('select',
+		{id: proposalsElementId,
+			accesskey: 'p',
+			styles: {
+				position: 'fixed',
+				top: usersX,
+				left: proposalsY},
+			events: {
+				focus: function() {
+					selectProposal();
+				}
+			}
+		}
+	);
+
+	proposalsElement.inject(document.body);
+
+	proposals.forEach(function(proposal){
+		var proposalOption = new Element('option', {text: proposal.name, value: proposal.proposal});
+		proposalOption.inject(proposalsElement);
+	});
+}
+
+function selectProposal() {
+	var baseRateId	= 'baseRate';
+	var hoursId 	= 'hours';
+	var baseRate	= 11;
+	var hours		= 24;
+
+	$(proposalDescId).set('value', $(proposalsElementId).getSelected().get('value'));
+	$(baseRateId).set('value', baseRate);
+	$(hoursId).set('value', hours);
 }
 
 function selectUser() {
@@ -86,17 +122,33 @@ logins =
 		user: "rbahuguna-dev",
 		password: 'password'
 	},
+	{
+		user: "rbahuguna-program",
+		password: 'password'
+	},
+];
+
+proposals = 
+[
+	{
+		proposal: "I am interested to apply for this job. I am an expert java, spring, database developer with experience in jQuery, MooTools, HTML. Please consider me for this",
+		name: "java"
+	},
+	{
+		proposal: "I am interested to apply. Please consider me for this",
+		name: "general"
+	},
 ];
 
 questions = 
 [
 	{
 		question: "What city was your father born in?",
-		answer: "usa"
+		answer: "nyc"
 	},
 	{
 		question: "What city was your mother born in?",
-		answer: "canada"
+		answer: "paris"
 	},
 ];
 
