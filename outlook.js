@@ -123,6 +123,10 @@ users =
 		user: "rajeev . bahuguna . seema out",
 		password: 'password'
 	},
+	{
+		user: "rajeev . bahuguna . naukri out",
+		password: 'password'
+	},
 ];
 
 init();
