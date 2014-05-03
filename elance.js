@@ -123,7 +123,7 @@ logins =
 		password: 'password'
 	},
 	{
-		user: "rbahuguna-program",
+		user: "rajeevb_develop",
 		password: 'password'
 	},
 ];
@@ -149,6 +149,10 @@ questions =
 	{
 		question: "What city was your mother born in?",
 		answer: "paris"
+	},
+	{
+		question: "What's the name of your first boyfriend or girlfriend?",
+		answer: "monica"
 	},
 ];
 
