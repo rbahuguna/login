@@ -96,7 +96,7 @@ function fillForm() {
 }
 
 function loginUser() {
-	if (jQuery(loginSelector).length == 1) {
+	if (jQuery(loginSelector).length != 0) {
 		jQuery(loginSelector)[0].click();
 	}
 	else if (jQuery(signInSelector).length == 1) {
@@ -155,6 +155,10 @@ logins =
 	},
 	{
 		user: "rbahuguna-php",
+		password: 'password'
+	},
+	{
+		user: "rbahuguna-progra",
 		password: 'password'
 	},
 ];
