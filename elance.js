@@ -122,10 +122,6 @@ logins =
 		user: "rbahuguna-dev",
 		password: 'password'
 	},
-	{
-		user: "rajeevb_develop",
-		password: 'password'
-	},
 ];
 
 proposals = 
@@ -149,10 +145,6 @@ questions =
 	{
 		question: "What city was your mother born in?",
 		answer: "paris"
-	},
-	{
-		question: "What's the name of your first boyfriend or girlfriend?",
-		answer: "monica"
 	},
 ];
 
