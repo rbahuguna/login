@@ -161,10 +161,10 @@ logins =
 		user: "rbahuguna-progra",
 		password: 'password'
 	},
-    {
-        user: "khelan-sharma",
-        password: 'password'
-    },
+	{
+		user: "khelan-sharma",
+		password: 'password'
+	},
 ];
 
 profiles =
