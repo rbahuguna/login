@@ -165,6 +165,10 @@ logins =
 		user: "khelan-sharma",
 		password: 'password'
 	},
+	{
+		user: "bhagwan-ghildyal",
+		password: 'password'
+	},
 ];
 
 profiles =
