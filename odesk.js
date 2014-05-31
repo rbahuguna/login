@@ -170,7 +170,7 @@ logins =
 		password: 'password'
 	},
 	{
-		user: "ravi-sayu",
+		user: "ravi_sayu",
 		password: 'password'
 	},
 ];
