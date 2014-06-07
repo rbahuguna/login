@@ -142,10 +142,6 @@ logins =
 		password: 'password'
 	},
 	{
-		user: "rajeev-bahuguna",
-		password: 'password'
-	},
-	{
 		user: "rbahuguna-php",
 		password: 'password'
 	},
