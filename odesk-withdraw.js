@@ -7,10 +7,7 @@
 // @copyright	2012+, You
 // ==/UserScript==
 
-
-debugger;
 setTimeout(function(){
-    debugger;
 	var applications=jQuery("#applications a[name*=job]")
 	if (applications.length){
 	    applications[0].click();
