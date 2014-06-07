@@ -138,10 +138,6 @@ logins =
 		password: 'password'
 	},
 	{
-		user: "rbahuguna1",
-		password: 'password'
-	},
-	{
 		user: "rbahuguna-dev",
 		password: 'password'
 	},
