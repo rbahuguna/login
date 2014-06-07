@@ -142,10 +142,6 @@ logins =
 		password: 'password'
 	},
 	{
-		user: "rbahuguna-java",
-		password: 'password'
-	},
-	{
 		user: "rbahuguna-dev",
 		password: 'password'
 	},
