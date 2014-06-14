@@ -10,7 +10,7 @@
 
 var usersElementId			= 'users';
 var proposalsElementId		= 'proposals';
-var proposalDescId			= 'bid_desc-plaintext';
+var proposalExpId			= 'bid_exp-plaintext';
 var loginNameId				= 'login_name';
 var loginPasswdId		 	= 'passwd';
 var signInId				= 'spr-sign-in-btn-standard';
@@ -94,7 +94,7 @@ function selectProposal() {
 	var baseRate	= 11;
 	var hours		= 24;
 
-	$(proposalDescId).set('value', $(proposalsElementId).getSelected().get('value'));
+	$(proposalExpId).set('value', $(proposalsElementId).getSelected().get('value'));
 	$(baseRateId).set('value', baseRate);
 	$(hoursId).set('value', hours);
 }
