@@ -10,6 +10,7 @@
 
 var usersElementId			= 'users';
 var proposalsElementId		= 'proposals';
+var proposalDescId			= 'bid_desc-plaintext';
 var proposalExpId			= 'bid_exp-plaintext';
 var loginNameId				= 'login_name';
 var loginPasswdId		 	= 'passwd';
@@ -94,7 +95,12 @@ function selectProposal() {
 	var baseRate	= 11;
 	var hours		= 24;
 
-	$(proposalExpId).set('value', $(proposalsElementId).getSelected().get('value'));
+	if ($(proposalDescId)) {
+		$(proposalDescId).set('value', $(proposalsElementId).getSelected().get('value'));
+	}
+	else {
+		$(proposalExpId).set('value', $(proposalsElementId).getSelected().get('value'));
+	}
 	$(baseRateId).set('value', baseRate);
 	$(hoursId).set('value', hours);
 }
