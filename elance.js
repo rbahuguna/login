@@ -97,6 +97,9 @@ function selectProposal() {
 
 	if ($(proposalExpId)) {
 		$(proposalExpId).set('value', $(proposalsElementId).getSelected().get('value'));
+		if ($(proposalDescId)) {
+			$(proposalDescId).set('value', 'use power tools');
+		}
 	}
 	else {
 		$(proposalDescId).set('value', $(proposalsElementId).getSelected().get('value'));
