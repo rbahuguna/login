@@ -95,11 +95,11 @@ function selectProposal() {
 	var baseRate	= 11;
 	var hours		= 24;
 
-	if ($(proposalDescId)) {
-		$(proposalDescId).set('value', $(proposalsElementId).getSelected().get('value'));
+	if ($(proposalExpId)) {
+		$(proposalExpId).set('value', $(proposalsElementId).getSelected().get('value'));
 	}
 	else {
-		$(proposalExpId).set('value', $(proposalsElementId).getSelected().get('value'));
+		$(proposalDescId).set('value', $(proposalsElementId).getSelected().get('value'));
 	}
 	$(baseRateId).set('value', baseRate);
 	$(hoursId).set('value', hours);
