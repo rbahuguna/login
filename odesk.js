@@ -134,10 +134,6 @@ function switchUser() {
 logins = 
 [
 	{
-		user: "rbahuguna",
-		password: 'password'
-	},
-	{
 		user: "rajeev_developer",
 		password: 'password'
 	},
