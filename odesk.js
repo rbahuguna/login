@@ -134,7 +134,7 @@ function switchUser() {
 logins = 
 [
 	{
-		user: "khelan-sharma",
+		user: "developer-rb",
 		password: 'password'
 	},
 ];
