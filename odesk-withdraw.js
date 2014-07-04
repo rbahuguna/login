@@ -8,7 +8,7 @@
 // ==/UserScript==
 
 setTimeout(function(){
-	var applications=jQuery("#applications a[name*=job]")
+	var applications=jQuery("#applications a[name*=job], #interviews a[id*=job], #invitations a[id*=job]")
 	if (applications.length){
 	    applications[0].click();
 	}
@@ -26,6 +26,13 @@ var decline = jQuery("A:contains('Decline')");
 decline.click();
 jQuery('label:contains("Job is not a fit for my skills")').click();
 jQuery('*[value="Decline"]').click();
+
+archivedCurrentTab = jQuery("a.oTab.isCurrent:contains('Archived')");
+activedTab = jQuery("a.oTab:contains('Active')");
+
+if ( archivedCurrentTab.length == 1 && activedTab.length == 1 ) {
+    activedTab[0].click();
+}
 
 var backToApplications = jQuery("A:contains('Back to My Job Applications')");
 if (!withdraw.length && !decline.length && backToApplications.length) {
