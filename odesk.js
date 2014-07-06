@@ -137,6 +137,10 @@ logins =
 		user: "developer-rb",
 		password: 'password'
 	},
+	{
+		user: "kh-sharma",
+		password: 'password'
+	},
 ];
 
 profiles =
