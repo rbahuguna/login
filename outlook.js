@@ -33,6 +33,10 @@ function init() {
 	if (jQuery(signInAnchorSelector).length) {
 		jQuery(signInAnchorSelector)[0].click();
 	}
+	if (jQuery("a[href*=outlook]:contains(Outlook)").length) {
+		jQuery("a[href*=outlook]:contains(Outlook)").attr("target", "_self");
+		jQuery("a[href*=outlook]:contains(Outlook)")[0].click();
+	}
 	var userParentSelector = 'body';
 	var userSelectionId = "user";
 	var userSelector = '#' + userSelectionId;
