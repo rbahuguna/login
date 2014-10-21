@@ -29,13 +29,13 @@ function init() {
 	if (jQuery("a[href*=outlook]:contains('Sign in')").length>0) {
 		jQuery("a[href*=outlook]:contains('Sign in')")[0].click();
 	}
-	var signInAnchorSelector = '#brand a';
-	if (jQuery(signInAnchorSelector).length) {
+	else if (jQuery(signInAnchorSelector).length) {
+		var signInAnchorSelector = '#brand a';
 		jQuery(signInAnchorSelector)[0].click();
 	}
-	if (jQuery("a[href*=outlook]:contains(Outlook)").length) {
-		jQuery("a[href*=outlook]:contains(Outlook)").attr("target", "_self");
+	else if (jQuery("a[href*=outlook]:contains(Outlook)").length == 1) {
 		jQuery("a[href*=outlook]:contains(Outlook)")[0].click();
+		close();
 	}
 	var userParentSelector = 'body';
 	var userSelectionId = "user";
