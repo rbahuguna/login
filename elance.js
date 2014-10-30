@@ -124,6 +124,10 @@ function selectUser() {
 logins = 
 [
 	{
+		user: "developer_outlook",
+		password: 'password'
+	},
+	{
 		user: "rbahuguna-developer",
 		password: 'password'
 	},
