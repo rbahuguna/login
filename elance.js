@@ -124,6 +124,10 @@ function selectUser() {
 logins = 
 [
 	{
+		user: "panda_king",
+		password: 'password'
+	},
+	{
 		user: "saryu_ram",
 		password: 'password'
 	},
