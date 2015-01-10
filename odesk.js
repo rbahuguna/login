@@ -140,6 +140,9 @@ logins =
 	{
 		user: "kh-sharma",
 		password: 'password'
+	},	{
+		user: "rajeevbahuguna",
+		password: 'password'
 	},
 ];
 
