@@ -17,7 +17,7 @@ userLinkSelector = '#simpleCompanySelector .oDropdownValue';
 logoutSelector = 'a:contains("Log out")';
 userSelectedCookie = 'selectedUser';
 manualLoginCookie = 'manualLogin';
-loginSelector = 'a[id=login]';
+loginSelector = 'a:contains("Login")';
 usernameSelector = '#username';
 passwordSelector = '#password';
 signInSelector = '#submit';
