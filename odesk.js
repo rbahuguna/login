@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name		login https://www.odesk.com/
+// @name		login https://www.upwork.com/
 // @namespace	http://use.i.E.your.homepage/
 // @version		0.1
-// @description	login https://www.odesk.com/
-// @match		https://www.odesk.com/*
+// @description	login https://www.upwork.com/
+// @match		https://www.upwork.com/*
 // @require		https://rawgithub.com/rbahuguna/login/master/utility.js
 // @copyright	2012+, You
 // ==/UserScript==
@@ -14,7 +14,7 @@ userSelector = '#' + userSelectionId;
 profileSelectionId = "profile";
 profileSelector = '#' + profileSelectionId;
 userLinkSelector = '#simpleCompanySelector .oDropdownValue';
-logoutSelector = 'a.oLogout';
+logoutSelector = 'a:contains("Log out")';
 userSelectedCookie = 'selectedUser';
 manualLoginCookie = 'manualLogin';
 loginSelector = 'a[id=login]';
