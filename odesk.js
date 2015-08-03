@@ -151,21 +151,21 @@ profiles =
 	{
 		display: 'Java',
 		value: 'I have experience using java J2EE extensively for web development. ' +
-		'I am experienced in latest technologies including web services, ajax, jquery, CSS3, HTML5, hibernate, spring. ' +
+		'I am experienced in latest technologies including web services, angularjs, javascript, CSS3, HTML5, hibernate, spring. ' +
 		'I have experience using several application servers - both open source and commercial grade. ' +
 		'I also have experience using Oracle 11, SQLServer 12, MySQL databases. Please consider me for this assignment'
 	},
 	{
 		display: 'General',
 		value: 'I have long experience in web application development. ' +
-		'I am experienced in latest technologies including PHP, Java, .NET, web services, ajax, jquery, CSS3, HTML5. ' +
+		'I am experienced in latest technologies including PHP, Java, .NET, web services, ajax, javascipt, CSS3, HTML5. ' +
 		'I have experience using several application servers - both open source and commercial grade. ' +
 		'I also have experience using Oracle 11, SQLServer 12, MySQL databases. Please consider me for this assignment'
 	},
 	{
 		display: 'php',
 		value: 'I have long experience in web application development. ' +
-		'I am experienced in latest technologies including PHP, WordPress, Joomal, web services, ajax, jquery, CSS3, HTML5. ' +
+		'I am experienced in latest technologies including PHP, WordPress, Joomal, web services, ajax, javascript, CSS3, HTML5. ' +
 		'I have experience using several application servers - both open source and commercial grade. ' +
 		'I also have experience using Oracle 11, SQLServer 12, MySQL databases. Please consider me for this assignment'
 	}

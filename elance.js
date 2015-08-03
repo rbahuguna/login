@@ -148,7 +148,7 @@ logins =
 proposals = 
 [
 	{
-		proposal: "I am interested to apply for this job. I am an expert java, spring, database developer with experience in jQuery, MooTools, HTML. Please consider me for this",
+		proposal: "I am interested to apply for this job. I am an expert java, angularjs, spring, database developer with experience in javascript, HTML. Please consider me for this",
 		name: "java"
 	},
 	{
