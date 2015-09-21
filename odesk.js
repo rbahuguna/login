@@ -1,134 +1,59 @@
 // ==UserScript==
-// @name		login https://www.upwork.com/
-// @namespace	http://use.i.E.your.homepage/
-// @version		0.1
-// @description	login https://www.upwork.com/
-// @match		https://www.upwork.com/*
+// @name        use https://www.upwork.com/
+// @version     0.1
+// @description use https://www.upwork.com/
+// @match       https://www.upwork.com/*
+// @require		https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js
 // @require		https://rawgithub.com/rbahuguna/login/master/utility.js
-// @copyright	2012+, You
+// @copyright   2015+, rbahuguna
 // ==/UserScript==
 
-userParentSelector = 'body';
-userSelectionId = "user";
-userSelector = '#' + userSelectionId;
-profileSelectionId = "profile";
-profileSelector = '#' + profileSelectionId;
-userLinkSelector = '#simpleCompanySelector .oDropdownValue';
-logoutSelector = 'a:contains("Log out")';
-userSelectedCookie = 'selectedUser';
-manualLoginCookie = 'manualLogin';
-loginSelector = 'a:contains("Login")';
-usernameSelector = '#username';
-passwordSelector = '#password';
-signInSelector = '#submit';
-proposal = '#coverLetter';
-bid = '#submitButton';
-captchaResponseSelector = '*[name=captcha_response_field]'
-agreementSelector = '#agreement';
+loginPageSelector   = "a[href='/login']"
+logoutPageSelector  = "a[href='/logout'], a[href='/Logout']"
+userSelector        = "#login_username"
+passwordSelector    = "#login_password"
+loginCaptchaSelector= "#login_captcha"
+submitSelector      = "[type=submit]"
 
-function init() {
-	jQuery(loginSelector).click(function() {
-		removeCookie(manualLoginCookie);
-	});
+loginPage           = document.querySelector(loginPageSelector)
+logoutPage          = document.querySelector(logoutPageSelector)
+user                = document.querySelector(userSelector)
+password            = document.querySelector(passwordSelector)
+loginCaptcha        = document.querySelector(loginCaptchaSelector)
+submit              = document.querySelector(submitSelector)
 
-	jQuery(signInSelector).click(function() {
-		removeCookie(manualLoginCookie);
-		var userSelect = jQuery(userSelector);
-		createCookie(userSelectedCookie, userSelect.val());
-		jQuery(usernameSelector).val(userSelect.val());
-		for(login in logins) {
-			if (logins[login].user == userSelect.val()) {
-				jQuery(passwordSelector).val(logins[login].password);
-				break;
-			}
-		}
-	});
+userParentSelector  = 'body'
+selectElement       = 'select';
+usersId             = "users"
+usersSelector       = "#" + usersId
+profilesId          = "profiles"
+profilesSelector    = "#" + profilesId
+proposalSelector    = '#coverLetter'
+agreementSelector   = '#agreement'
+bid                 = '#submitButton'
 
-	jQuery(logoutSelector).click(function() {
-		var userSelect = jQuery(userSelector);
-		createCookie(userSelectedCookie, userSelect.val());
-		createCookie(manualLoginCookie, '');
-	});
+cookie              = "user"
 
-	var selectElement = 'select';
-
-	jQuery(userParentSelector).append('<' + selectElement + '/>');
-	jQuery(selectElement + ':last').attr('id', userSelectionId);
-	jQuery(userSelector).attr('accesskey', 'a');
-	for(var login in logins) {
-		jQuery(userSelector).append('<option ' + '' +'>' + logins[login].user + '</option>');
-		if (logins[login].user == readCookie(userSelectedCookie)) {
-			jQuery(userSelector + ' option:last').attr('selected', true);
-		}
-		jQuery(userSelector + ' option:last').attr('value', logins[login].user);
-	}
-
-	jQuery(userSelector).css("position", "fixed").css("top", 50).css("left", 0);
-	
-	jQuery(userSelector).change(switchUser);
-
-	if (readCookie(manualLoginCookie) == null) {
-		loginUser();
-	}
-
-	jQuery(userParentSelector).append('<' + selectElement + '/>');
-	jQuery(selectElement + ':last').attr('id', profileSelectionId);
-	jQuery(profileSelector).attr('accesskey', 'p');
-	for(var profile in profiles) {
-		jQuery(profileSelector).append('<option ' + '' +'>' + profiles[profile].display + '</option>');
-		jQuery(profileSelector + ' option:last').attr('value', profiles[profile].value);
-	}
-
-	jQuery(profileSelector).css("position", "fixed").css("top", 150).css("left", 0);
-
-	jQuery(profileSelector).change(fillForm);
-
-	jQuery(bid).click( function() {
-		fillForm();
-	});
-
-	fillForm();
-}
-
-function fillForm() {
-	jQuery(proposal).val(jQuery(profileSelector).val());
-	jQuery(agreementSelector).attr('checked', true);
-}
-
-function loginUser() {
-	if (jQuery(loginSelector).length != 0) {
-		jQuery(loginSelector)[0].click();
-	}
-	else if (jQuery(signInSelector).length == 1) {
-		if (jQuery(captchaResponseSelector).length ==0) {
-			jQuery(signInSelector).click();
-		}
-	}
-	else {
-		return false;
-	}
-	return true;
-}
-
-function lououtUser() {
-	var activeClass = 'isActive';
-	if (!jQuery(logoutSelector).hasClass(activeClass)) {
-		jQuery(userLinkSelector).addClass(activeClass);
-	}
-	if (jQuery(logoutSelector).length > 0) {
-		jQuery(logoutSelector)[0].click();
-		removeCookie(manualLoginCookie);
-	}
-}
-
-function switchProfile() {
-	jQuery(bid).click();
-}
-
-function switchUser() {
-	if (!loginUser()) {
-		lououtUser();
-	}
+function logUser(logout) {
+    var userName = jQuery(usersSelector).val()
+    if (loginPage) {
+        loginPage.click()
+    }
+    else if (user && !loginCaptcha) {
+        user.value = userName
+        logins.forEach(function(user){
+            if (userName == user.user) {
+                password.value = user.password
+                return false;
+            }
+        })
+        submit.disabled = false
+        submit.click()
+    }
+    else if (logoutPage && logout) {
+        createCookie(cookie, userName);
+        logoutPage.click()
+    }
 }
 
 logins = 
@@ -145,6 +70,24 @@ logins =
 		password: 'password'
 	},
 ];
+
+jQuery(userParentSelector).append('<' + selectElement + ' id=' + '"' + usersId + '"' + '/>');
+jQuery(usersSelector).attr('accesskey', 'a');
+for(var login in logins) {
+    jQuery(usersSelector).append('<option ' + '' +'>' + logins[login].user + '</option>');
+    if (logins[login].user == readCookie(cookie)) {
+        jQuery(usersSelector + ' option:last').attr('selected', true);
+    }
+    jQuery(usersSelector + ' option:last').attr('value', logins[login].user);
+}
+
+jQuery(usersSelector).css("position", "fixed").css("top", 50).css("left", 0);
+
+logUser()
+
+jQuery(usersSelector).change(function() {
+    logUser(true)
+});
 
 profiles =
 [
@@ -171,4 +114,22 @@ profiles =
 	}
 ]
 
-init();
+jQuery(userParentSelector).append('<' + selectElement + ' id=' + '"' + profilesId + '"' + '/>');
+jQuery(profilesSelector).attr('accesskey', 'p');
+for(var profile in profiles) {
+    jQuery(profilesSelector).append('<option ' + '' +'>' + profiles[profile].display + '</option>');
+    jQuery(profilesSelector + ' option:last').attr('value', profiles[profile].value);
+}
+
+jQuery(profilesSelector).css("position", "fixed").css("top", 150).css("left", 0);
+
+jQuery(profilesSelector).change(fillForm);
+
+jQuery(bid).click( function() {
+    fillForm();
+});
+
+function fillForm() {
+	jQuery(proposalSelector).val(jQuery(profilesSelector).val());
+	jQuery(agreementSelector).attr('checked', true);
+}
