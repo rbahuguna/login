@@ -124,6 +124,7 @@ for(var profile in profiles) {
 jQuery(profilesSelector).css("position", "fixed").css("top", 150).css("left", 0);
 
 jQuery(profilesSelector).change(fillForm);
+jQuery(profilesSelector).click(fillForm);
 
 jQuery(bid).click( function() {
     fillForm();
