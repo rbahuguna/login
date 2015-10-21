@@ -148,12 +148,16 @@ logins =
 proposals = 
 [
 	{
-		proposal: "I am interested to apply for this job. I am an expert java, angularjs, spring, database developer with experience in javascript, HTML. Please consider me for this",
-		name: "java"
+		proposal: "I wish to apply for this job. My expertise is Java J2EE, NodeJS, AngularJS, Java Spring, REST, database development with extensive working experience in javascript, CSS3, HTML. I can start immediate",
+		name: "J2EE"
 	},
 	{
-		proposal: "I am interested to apply. Please consider me for this",
-		name: "general"
+		proposal: "I am interested in this job. I am expert AngularJS, NodeJS, Javascript, CSS3, HTML, Adobe PhotoShop CC developer. I am available to start immediate",
+		name: "Web"
+	},
+	{
+		proposal: "I am interested in this job and can start immediately. I am expert PHP, Python, HTML, CSS3 developer with working knowledge of Adobe Photoshop CC",
+		name: "General"
 	},
 ];
 

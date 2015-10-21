@@ -92,25 +92,16 @@ jQuery(usersSelector).change(function() {
 profiles =
 [
 	{
-		display: 'Java',
-		value: 'I have experience using java J2EE extensively for web development. ' +
-		'I am experienced in latest technologies including web services, angularjs, javascript, CSS3, HTML5, hibernate, spring. ' +
-		'I have experience using several application servers - both open source and commercial grade. ' +
-		'I also have experience using Oracle 11, SQLServer 12, MySQL databases. Please consider me for this assignment'
+		display: 'J2EE',
+		value: 'I wish to apply for this job. My expertise is Java J2EE, NodeJS, AngularJS, Java Spring, REST, database development with extensive working experience in javascript, CSS3, HTML. I can start immediate'
+	},
+	{
+		display: 'Web',
+		value: 'I am interested in this job. I am expert AngularJS, NodeJS, Javascript, CSS3, HTML, Adobe PhotoShop CC developer. I am available to start immediate'
 	},
 	{
 		display: 'General',
-		value: 'I have long experience in web application development. ' +
-		'I am experienced in latest technologies including PHP, Java, .NET, web services, ajax, javascipt, CSS3, HTML5. ' +
-		'I have experience using several application servers - both open source and commercial grade. ' +
-		'I also have experience using Oracle 11, SQLServer 12, MySQL databases. Please consider me for this assignment'
-	},
-	{
-		display: 'php',
-		value: 'I have long experience in web application development. ' +
-		'I am experienced in latest technologies including PHP, WordPress, Joomal, web services, ajax, javascript, CSS3, HTML5. ' +
-		'I have experience using several application servers - both open source and commercial grade. ' +
-		'I also have experience using Oracle 11, SQLServer 12, MySQL databases. Please consider me for this assignment'
+		value: 'I am interested in this job and can start immediately. I am expert PHP, Python, HTML, CSS3 developer with working knowledge of Adobe Photoshop'
 	}
 ]
 
