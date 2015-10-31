@@ -76,6 +76,9 @@ function init() {
 			events: {
 				focus: function() {
 					selectProposal();
+				},
+				change: function() {
+					selectProposal();
 				}
 			}
 		}
