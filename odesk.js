@@ -101,11 +101,11 @@ profiles =
 	},
 	{
 		display: 'Web',
-		value: 'I am interested in this job. I am expert PHP, AngularJS, NodeJS, Javascript, CSS3, HTML, Adobe CC developer. I am available to start immediate'
+		value: 'I am interested in this job. I am expert PHP, AngularJS, Bootstrap, NodeJS, Javascript, CSS3, HTML, Adobe CC developer. I am available to start immediate'
 	},
 	{
 		display: 'General',
-		value: 'I am interested in this job and can start immediately. I am expert PHP, Python, Android, HTML, CSS3 developer with working knowledge of Adobe CC'
+		value: 'I am interested in this job and can start immediately. I am expert C, Java, PHP, Python, Android, HTML, CSS3 developer with working knowledge of Adobe CC'
 	}
 ]
 

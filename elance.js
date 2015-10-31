@@ -155,11 +155,11 @@ proposals =
 		name: "J2EE"
 	},
 	{
-		proposal: "I am interested in this job. I am expert PHP, AngularJS, NodeJS, Javascript, CSS3, HTML, Adobe CC developer. I am available to start immediate",
+		proposal: "I am interested in this job. I am expert PHP, AngularJS, Bootstrap, NodeJS, Javascript, CSS3, HTML, Adobe CC developer. I am available to start immediate",
 		name: "Web"
 	},
 	{
-		proposal: "I am interested in this job and can start immediately. I am expert Android, PHP, Python, HTML, CSS3 developer with working knowledge of Adobe CC",
+		proposal: "I am interested in this job and can start immediately. I am expert Java, Android, C, PHP, Python, HTML, CSS3 developer with working knowledge of Adobe CC",
 		name: "General"
 	},
 ];
