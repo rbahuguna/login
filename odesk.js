@@ -10,8 +10,8 @@
 
 loginPageSelector   = "a[href='/login']"
 logoutPageSelector  = "a[href='/logout'], a[href='/Logout']"
-userSelector        = "#login_username"
-passwordSelector    = "#login_password"
+userSelector        = "#login_username, #username"
+passwordSelector    = "#login_password, #password"
 loginCaptchaSelector= "#login_captcha"
 submitSelector      = "[type=submit]"
 
@@ -101,11 +101,11 @@ profiles =
 	},
 	{
 		display: 'Web',
-		value: 'I am interested in this job. I am expert PHP, AngularJS, Bootstrap, NodeJS, Javascript, CSS3, HTML, Adobe CC developer. I am available to start immediate'
+		value: 'I am interested in this job. I am expert PHP, Java, AngularJS, Bootstrap, NodeJS, Javascript, CSS3, HTML, Adobe CC developer. I am available to start immediate'
 	},
 	{
 		display: 'General',
-		value: 'I am interested in this job and can start immediately. I am expert C, Java, PHP, Python, Android, HTML, CSS3 developer with working knowledge of Adobe CC'
+		value: 'I am interested in this job and can start immediately. I am expert Java, C, PHP, Python, Android, HTML, CSS3 developer with working knowledge of Adobe CC'
 	}
 ]
 
