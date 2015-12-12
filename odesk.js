@@ -9,7 +9,7 @@
 // ==/UserScript==
 
 loginPageSelector   = "a[href='/login']"
-logoutPageSelector  = "a[href='/logout'], a[href='/Logout']"
+logoutPageSelector  = "a[href='/logout'], a[href='/Logout'], a[title='Log out']"
 userSelector        = "#login_username, #username"
 passwordSelector    = "#login_password, #password"
 loginCaptchaSelector= "#login_captcha"
