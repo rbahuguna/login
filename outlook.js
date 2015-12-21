@@ -3,6 +3,7 @@
 // @namespace	http://use.i.E.your.homepage/
 // @version		0.1
 // @description	login http://www.outlook.com/
+// @match		https://outlook.live.com/*
 // @match		https://login.live.com/login.srf?*
 // @match		https://*.mail.live.com/*
 // @match		https://signout.live.com/content/dam/imp/surfaces/mail_signout/*
@@ -15,7 +16,8 @@
 // ==/UserScript==
 
 userLinkSelector = '#c_melink';
-logoutSelector = '#c_signout';
+logoutSelector = 'a:contains("Sign out")';
+meLink = '[class*="me-tileimg"]';
 
 userSelectedCookie = 'selectedUser';
 autoLoginCookie = 'autoLogin';
@@ -92,6 +94,9 @@ function switchUser() {
 	}
 	else {
 		createCookie(userSelectedCookie, jQuery(this).val());
+		if (jQuery(meLink).length) {
+			jQuery(meLink).click();
+		}
 		if (jQuery(logoutSelector).length == 0) {
 			jQuery(userLinkSelector).click();
 		}
@@ -104,31 +109,31 @@ function switchUser() {
 users =
 [
 	{
-		user: "r _ bahuguna hot",
+		user: "r _ bahuguna hot mail",
 		password: 'password'
 	},
 	{
-		user: "rajeev . bahuguna out",
+		user: "rajeev . bahuguna out look",
 		password: 'password'
 	},
 	{
-		user: "rajeev . bahuguna . dev out",
+		user: "rajeev . bahuguna . dev out look",
 		password: 'password'
 	},
 	{
-		user: "rajeev . bahuguna . java out",
+		user: "rajeev . bahuguna . java out look",
 		password: 'password'
 	},
 	{
-		user: "rajeev . bahuguna . developer out",
+		user: "rajeev . bahuguna . developer out look",
 		password: 'password'
 	},
 	{
-		user: "rajeev . bahuguna . seema out",
+		user: "rajeev . bahuguna . seema out look",
 		password: 'password'
 	},
 	{
-		user: "rajeev . bahuguna . naukri out",
+		user: "rajeev . bahuguna . naukri out look",
 		password: 'password'
 	},
 ];
