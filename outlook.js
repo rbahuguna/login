@@ -104,31 +104,31 @@ function switchUser() {
 users =
 [
 	{
-		user: "r _ bahuguna hot",
+		user: "r _ bahuguna hot mail",
 		password: 'password'
 	},
 	{
-		user: "rajeev . bahuguna out",
+		user: "rajeev . bahuguna out look",
 		password: 'password'
 	},
 	{
-		user: "rajeev . bahuguna . dev out",
+		user: "rajeev . bahuguna . dev out look",
 		password: 'password'
 	},
 	{
-		user: "rajeev . bahuguna . java out",
+		user: "rajeev . bahuguna . java out look",
 		password: 'password'
 	},
 	{
-		user: "rajeev . bahuguna . developer out",
+		user: "rajeev . bahuguna . developer out look",
 		password: 'password'
 	},
 	{
-		user: "rajeev . bahuguna . seema out",
+		user: "rajeev . bahuguna . seema out look",
 		password: 'password'
 	},
 	{
-		user: "rajeev . bahuguna . naukri out",
+		user: "rajeev . bahuguna . naukri out look",
 		password: 'password'
 	},
 ];
