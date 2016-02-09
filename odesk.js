@@ -101,7 +101,7 @@ profiles =
 [
 	{
 		display: 'J2EE',
-		value: 'I wish to apply for this job. My expertise is Java J2EE, Android, NodeJS, AngularJS, Java Spring, REST, database development with extensive working experience in javascript, CSS3, HTML. I can start immediate'
+		value: 'I wish to apply for this job. My expertise is Java J2EE, Android, NodeJS, AngularJS, Java Spring, REST, Scala, database development with extensive working experience in javascript, CSS3, HTML. I can start immediate'
 	},
 	{
 		display: 'Web',
@@ -109,7 +109,7 @@ profiles =
 	},
 	{
 		display: 'General',
-		value: 'I am interested in this job and can start immediately. I am expert Java, C, PHP, Python, Android, HTML, CSS3 developer with working knowledge of Adobe CC'
+		value: 'I am interested in this job and can start immediately. I am expert Java, C, PHP, Python, Android, HTML, CSS3, Scala developer with working knowledge of Adobe CC'
 	}
 ]
 
