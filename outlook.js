@@ -24,15 +24,11 @@ autoLoginCookie = 'autoLogin';
 
 usernameSelector = '#i0116';
 passwordSelector = '#i0118';
-signInSelector = '#idSIButton9';
+signInLink = '#idSIButton9';
 
 function init() {
 	if (jQuery("a[href*=outlook]:contains('Sign in')").length>0) {
 		jQuery("a[href*=outlook]:contains('Sign in')")[0].click();
-	}
-	else if (jQuery(signInAnchorSelector).length) {
-		var signInAnchorSelector = '#brand a';
-		jQuery(signInAnchorSelector)[0].click();
 	}
 	else if (jQuery("a[href*=outlook]:contains(Outlook)").length == 1) {
 		jQuery("a[href*=outlook]:contains(Outlook)")[0].click();
@@ -42,7 +38,7 @@ function init() {
 	var userSelectionId = "user";
 	var userSelector = '#' + userSelectionId;
 
-	jQuery(signInSelector).click(function(){
+	jQuery(signInLink).click(function(){
 		fillAuthentication(jQuery(userSelector));
 	});
 
@@ -63,9 +59,9 @@ function init() {
 	
 	jQuery(userSelector).change(switchUser);
 
-	if (jQuery(signInSelector).length>0 && readCookie(autoLoginCookie) != null) {
+	if (jQuery(signInLink).length>0 && readCookie(autoLoginCookie) != null) {
 		removeCookie(autoLoginCookie);
-		login(jQuery(userSelector));
+		jQuery(signInLink).click();
 	}
 }
 
@@ -81,16 +77,11 @@ function fillAuthentication(userSelect) {
 	}
 }
 
-function login(userSelect) {
-	fillAuthentication(userSelect);
-	jQuery(signInSelector).click();
-}
-
 function switchUser() {
 	createCookie(autoLoginCookie, '');
 
-	if (jQuery(signInSelector).length > 0) {
-		login(jQuery(this));
+	if (jQuery(signInLink).length > 0) {
+		jQuery(signInLink).click();
 	}
 	else {
 		createCookie(userSelectedCookie, jQuery(this).val());
