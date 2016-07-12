@@ -5,6 +5,7 @@
 // @description	login http://www.outlook.com/
 // @match		https://outlook.live.com/*
 // @match		https://login.live.com/login.srf?*
+// @match		https://login.live.com/ppsecure*
 // @match		https://*.mail.live.com/*
 // @match		https://signout.live.com/content/dam/imp/surfaces/mail_signout/*
 // @match		http://in.msn.com/?ocid=mailsignout*
@@ -27,11 +28,26 @@ passwordSelector = '#i0118';
 signInLink = '#idSIButton9';
 
 function init() {
-	if (jQuery("a[href*=outlook]:contains('Sign in')").length>0) {
-		jQuery("a[href*=outlook]:contains('Sign in')")[0].click();
+	var signIns = jQuery("a:contains('Sign in')");
+	var signIn;
+	for(var index = 0;index < signIns.length;index++) {
+		var signInTemp = signIns[index];
+		if (signInTemp.host.indexOf("outlook") >= 0) {
+			signIn = signInTemp;
+			break;
+		}
 	}
-	else if (jQuery("a[href*=outlook]:contains(Outlook)").length == 1) {
-		jQuery("a[href*=outlook]:contains(Outlook)")[0].click();
+
+	var outlooks = jQuery("a:contains('Outlook')");
+	var outlook;
+	if (outlooks.length == 1 && outlooks[0].host.indexOf("outlook") >= 0) {
+		outlook = outlooks[0];
+	}
+	if (signIn) {
+		signIn.click();
+	}
+	else if (outlook) {
+		outlook.click();
 		close();
 	}
 	var userParentSelector = 'body';
