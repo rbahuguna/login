@@ -59,6 +59,10 @@ function logUser(logout) {
 logins = 
 [
 	{
+		user: "hampton_star",
+		password: 'password'
+	},
+	{
 		user: "panda_king",
 		password: 'password'
 	},
