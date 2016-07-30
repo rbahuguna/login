@@ -8,51 +8,51 @@
 // @copyright   2015+, rbahuguna
 // ==/UserScript==
 
-loginPageSelector   = "a[href='/login']"
-logoutPageSelector  = "a[href='/logout'], a[href='/Logout'], a[title='Log out'], a[ng-click='logout()'"
-userSelector        = "#login_username, #username"
-passwordSelector    = "#login_password, #password"
-loginCaptchaSelector= "#login_captcha"
-submitSelector      = "[type=submit]"
+loginPageSelector   = "a[href='/login']";
+logoutPageSelector  = "a[href='/logout'], a[href='/Logout'], a[title='Log out'], a[data-ng-click='logout()'";
+userSelector        = "#login_username, #username";
+passwordSelector    = "#login_password, #password";
+loginCaptchaSelector= "#login_captcha";
+submitSelector      = "[type=submit]";
 
-loginPage           = document.querySelector(loginPageSelector)
-logoutPage          = document.querySelector(logoutPageSelector)
-user                = document.querySelector(userSelector)
-password            = document.querySelector(passwordSelector)
-loginCaptcha        = document.querySelector(loginCaptchaSelector)
-submit              = document.querySelector(submitSelector)
+loginPage           = document.querySelector(loginPageSelector);
+logoutPage          = document.querySelector(logoutPageSelector);
+user                = document.querySelector(userSelector);
+password            = document.querySelector(passwordSelector);
+loginCaptcha        = document.querySelector(loginCaptchaSelector);
+submit              = document.querySelector(submitSelector);
 
-userParentSelector  = 'body'
+userParentSelector  = 'body';
 selectElement       = 'select';
-usersId             = "users"
-usersSelector       = "#" + usersId
-profilesId          = "profiles"
-profilesSelector    = "#" + profilesId
-proposalSelector    = '#coverLetter'
-agreementSelector   = '#agreement'
-bid                 = '#submitButton'
+usersId             = "users";
+usersSelector       = "#" + usersId;
+profilesId          = "profiles";
+profilesSelector    = "#" + profilesId;
+proposalSelector    = '#coverLetter';
+agreementSelector   = '#agreement';
+bid                 = '#submitButton';
 
-cookie              = "user"
+cookie              = "user";
 
 function logUser(logout) {
-    var userName = jQuery(usersSelector).val()
+    var userName = jQuery(usersSelector).val();
     if (loginPage) {
-        loginPage.click()
+        loginPage.click();
     }
     else if (user && !loginCaptcha) {
-        user.value = userName
+        user.value = userName;
         logins.forEach(function(user){
             if (userName == user.user) {
-                password.value = user.password
+                password.value = user.password;
                 return false;
             }
-        })
-        submit.disabled = false
-        submit.click()
+        });
+        submit.disabled = false;
+        submit.click();
     }
     else if (logoutPage && logout) {
         createCookie(cookie, userName);
-        logoutPage.click()
+        logoutPage.click();
     }
 }
 
@@ -99,10 +99,10 @@ for(var login in logins) {
 
 jQuery(usersSelector).css("position", "fixed").css("top", 50).css("left", 0);
 
-logUser()
+logUser();
 
 jQuery(usersSelector).change(function() {
-    logUser(true)
+    logUser(true);
 });
 
 profiles =
@@ -119,7 +119,7 @@ profiles =
 		display: 'General',
 		value: 'I am interested in this job and will start immediate. I am expert Java, PHP, C, Android, Python,Perl, HTML, CSS3, Javascript, Scala developer with working knowledge of Adobe CC.'
 	}
-]
+];
 
 jQuery(userParentSelector).append('<' + selectElement + ' id=' + '"' + profilesId + '"' + '/>');
 jQuery(profilesSelector).attr('accesskey', 'p');
