@@ -9,7 +9,7 @@
 // ==/UserScript==
 
 loginPageSelector   = "a[href='/login']";
-logoutPageSelector  = "a[href='/logout'], a[href='/Logout'], a[title='Log out'], a[data-ng-click='logout()'";
+logoutPageSelector  = "a[href='/logout'], a[href='/Logout'], a[title='Log out'], a[data-ng-click='logout()'], a[ng-click='logout()']";
 userSelector        = "#login_username, #username";
 passwordSelector    = "#login_password, #password";
 loginCaptchaSelector= "#login_captcha";
