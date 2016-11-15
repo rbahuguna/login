@@ -55,7 +55,8 @@ function init() {
 	var userSelector = '#' + userSelectionId;
 
 	jQuery(signInLink).click(function(){
-		fillAuthentication(jQuery(userSelector));
+		fillUser(jQuery(userSelector));
+		setTimeout(fillPassword, 5000, jQuery(userSelector));
 	});
 
 	var userSelect = 'select';
@@ -81,10 +82,13 @@ function init() {
 	}
 }
 
-function fillAuthentication(userSelect) {
+function fillUser(userSelect) {
 	createCookie(userSelectedCookie, userSelect.val());
 
 	jQuery(usernameSelector).val(userSelect.val());
+}
+
+function fillPassword(userSelect) {
 	for(userIndex in users) {
 		if (users[userIndex].user == userSelect.val()) {
 			jQuery(passwordSelector).val(users[userIndex].password);
