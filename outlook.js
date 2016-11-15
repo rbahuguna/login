@@ -73,10 +73,10 @@ function init() {
 	}
 
 	jQuery(userSelector).css("position", "fixed").css("top", 50).css("left", 350).css('z-index', 10);
-	
+
 	jQuery(userSelector).change(switchUser);
 
-	if (jQuery(signInLink).length>0 && readCookie(autoLoginCookie) != null) {
+	if (jQuery(signInLink).length>0 && readCookie(autoLoginCookie) !== null) {
 		removeCookie(autoLoginCookie);
 		jQuery(signInLink).click();
 	}
@@ -89,7 +89,7 @@ function fillUser(userSelect) {
 }
 
 function fillPassword(userSelect) {
-	for(userIndex in users) {
+	for(var userIndex in users) {
 		if (users[userIndex].user == userSelect.val()) {
 			jQuery(passwordSelector).val(users[userIndex].password);
 			break;
@@ -108,7 +108,7 @@ function switchUser() {
 		if (jQuery(meLink).length) {
 			jQuery(meLink).click();
 		}
-		if (jQuery(logoutSelector).length == 0) {
+		if (jQuery(logoutSelector).length === 0) {
 			jQuery(userLinkSelector).click();
 		}
 		if (jQuery(logoutSelector).length > 0) {
