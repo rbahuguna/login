@@ -12,14 +12,14 @@ loginPageSelector   = "a[href='/login']";
 logoutPageSelector  = "a[href='/logout'], a[href='/Logout'], a[title='Log out'], a[data-ng-click='logout()'], a[ng-click='logout()']";
 userSelector        = "#login_username, #username";
 passwordSelector    = "#login_password, #password";
-loginCaptchaSelector= "#login_captcha";
+loginCaptchaVisibleSelector= "#login_captcha:visible";
 submitSelector      = "[type=submit]";
 
 loginPage           = document.querySelector(loginPageSelector);
 logoutPage          = document.querySelector(logoutPageSelector);
 user                = document.querySelector(userSelector);
 password            = document.querySelector(passwordSelector);
-loginCaptcha        = document.querySelector(loginCaptchaSelector);
+loginCaptchaVisible = $(loginCaptchaVisibleSelector).length;
 submit              = document.querySelector(submitSelector);
 
 userParentSelector  = 'body';
@@ -39,7 +39,7 @@ function logUser(logout) {
     if (loginPage) {
         loginPage.click();
     }
-    else if (user && !loginCaptcha) {
+    else if (user && !loginCaptchaVisible) {
         user.value = userName;
         logins.forEach(function(user){
             if (userName == user.user) {
